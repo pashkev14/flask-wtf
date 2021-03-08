@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2 align="center">Оформление каюты</h2>
+    <div class="container">
+      <div class="row border bg-light">
+        <div class="col-sm">
+          Цвет стен
+        </div>
+        <div class="col-sm">
+          Эмблема
+        </div>
+      </div>
+        <div class="row">
+            {% if sex == "male" %}
+                {% if age < 21 %}
+                <div class="col-sm" style="background-color: #42aaff"></div>
+                {% else %}
+                <div class="col-sm" style="background-color: #0000ff"></div>
+                {% endif %}
+            {% else %}
+                {% if age < 21 %}
+                <div class="col-sm" style="background-color: #ffc0cb;"></div>
+                {% else %}
+                <div class="col-sm" style="background-color: #ff0000;"></div>
+                {% endif %}
+            {% endif %}
+            {% if age < 21 %}
+            <div class="col">
+                <img src={{ img_kid }}>
+            </div>
+            {% else %}
+            <div class="col">
+                <img src={{ img_adult }}>
+            </div>
+            {% endif %}
+        </div>
+        </div>
+    </div>
+{% endblock %}
