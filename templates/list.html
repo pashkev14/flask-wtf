@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <link rel="stylesheet" href={{ css }}>
+    {% if list == "ol" %}
+        <h2>Список профессий</h2>
+        <ol>
+            {% for prof in prof_list %}
+            <li>{{ prof }}</li>
+            {% endfor %}
+        </ol>
+    {% elif list == "ul" %}
+        <h2>Список профессий</h2>
+        <ul>
+            {% for prof in prof_list %}
+            <li>{{ prof }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h2>Неверный формат списков</h2>
+    {% endif %}
+{% endblock %}
