@@ -51,10 +51,11 @@ def show_form():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     image = url_for('static', filename='images/mars emblem.png')
+    css = url_for('static', filename='css/base.css')
     form = AccessForm()
     if form.validate_on_submit():
         return redirect('/success')
-    return render_template('login.html', title='Авторизация', form=form, image=image)
+    return render_template('login.html', title='Авторизация', form=form, image=image, css=css)
 
 
 @app.route('/success')
