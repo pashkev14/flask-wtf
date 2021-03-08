@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <link rel="stylesheet" href={{ css }}>
+    {% if "инженер" in prof or "строитель" in prof %}
+        <h2>Инженерные тренажеры</h2>
+        <img src={{ image_train }} alt="Забагало">
+    {% else %}
+        <h2>Научные симуляторы</h2>
+        <img src={{ image_sim }} alt="Забагало">
+    {% endif %}
+{% endblock %}
