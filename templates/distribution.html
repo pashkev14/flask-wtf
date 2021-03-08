@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <link rel="stylesheet" href={{ css }}>
+    {% set temp = "Каюта №" %}
+    <h2 align="center">Размещение по каютам</h2>
+    {% for item in astros %}
+    <p>{{ item }} - {{ temp }} {{ loop.index }}{% if loop.first %} - капитан корабля{% endif %}</p>
+    {% endfor %}
+{% endblock %}
