@@ -42,7 +42,7 @@ def show_form():
         "Готовы остаться на Марсе?": "True"
     }
     css = url_for('static', filename='css/base.css')
-    return render_template('auto_answer.html', form=pre_form, css=css)
+    return render_template('auto_answer.html', form=pre_form, css=css, title="Анкета")
 
 
 if __name__ == '__main__':
