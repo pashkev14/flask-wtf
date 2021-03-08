@@ -55,7 +55,7 @@ def login():
     form = AccessForm()
     if form.validate_on_submit():
         return redirect('/success')
-    return render_template('login.html', title='Авторизация', form=form, image=image, css=css)
+    return render_template('login.html', title='Аварийный доступ', form=form, image=image, css=css)
 
 
 @app.route('/success')
