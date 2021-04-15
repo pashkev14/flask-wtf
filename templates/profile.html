@@ -1,4 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
+{% set name = member.keys()|list %}
+<h1 align="center">{{ name[0] }}</h1>
+<div class='clearfix' align="center">
+    <img class='w-50 h-50' src="{{ member[name[0]]['photo'] }}">
+</div>
+<p align="center">{{ ", ".join(member[name[0]]['specialities']) }}</p>
 {% endblock %}

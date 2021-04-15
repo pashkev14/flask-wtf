@@ -3,6 +3,8 @@ import os
 from werkzeug.utils import redirect
 from accsessform import AccessForm
 from fileform import FileForm
+import json
+import random
 
 
 app = Flask(__name__)
@@ -101,7 +103,12 @@ def show_carousel():
 
 @app.route('/member')
 def show_profile():
-    return render_template('profile.html')
+    with open('templates/members.json', mode='r', encoding='utf-8') as jsfile:
+        data = json.load(jsfile)
+        rand_name = random.choice(list(data.keys()))
+        member = {f"{rand_name}": {"photo": url_for('static', filename=f'images/{data[rand_name]["photo"]}'),
+                                   "specialities": sorted(data[rand_name]["specialities"])}}
+        return render_template('profile.html', member=member)
 
 
 if __name__ == '__main__':
